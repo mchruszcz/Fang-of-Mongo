@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls.defaults import *
+from django.conf.urls import *
+from django.views.generic.base import RedirectView
 import settings
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -7,7 +8,8 @@ import settings
 
 urlpatterns = patterns('',
     # Example:
-     (r'^fangofmongo/', include('fangofmongo.fom.urls')),
+    (r'^$', RedirectView.as_view(url='/fangofmongo/')),
+    (r'^fangofmongo/', include('fangofmongo.fom.urls')),
 
     #serve static using django - for develpment pupose only
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),
