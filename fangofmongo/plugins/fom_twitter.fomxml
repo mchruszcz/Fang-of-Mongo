@@ -15,7 +15,7 @@
       <style type="text/css">
          #twitter_div{
              position: absolute;
-             left: 1100px;
+             right: 8px;
              top:  140px;
              width: 280px;
              height: auto;
